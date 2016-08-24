@@ -1,8 +1,12 @@
-// "use strict";
-// let firebase = require("./firebaseConfig");
+"use strict";
+let firebase = require("./firebaseConfig"),
+  provider = new firebase.auth.GoogleAuthProvider();
 
-// function logInGoogle() {
+function logInGoogle() {
+    // console.log('logging in, bitches');
+    console.log(provider);
+    return firebase.auth().signInWithPopup(provider);
 
-// }
+}
 
-// module.exports = logInGoogle;
+module.exports = logInGoogle;
